@@ -21,7 +21,7 @@ app.post('/sendtoclients', async (req, res) => {
           user: process.env.USER,
           pass: process.env.PASS,
         },
-        requireTLS:false,
+        requireTLS:true,
         rejectUnauthorized: false,
         tls:{
             rejectUnauthorized:false,
