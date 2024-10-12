@@ -16,16 +16,12 @@ app.post('/sendtoclients', async (req, res) => {
       const transporter = nodemailer.createTransport({
         host: process.env.HOST,
         port: process.env.EMAILPORT,
-        secure: false,
+        secure: true,
         auth: {
           user: process.env.USER,
           pass: process.env.PASS,
         },
-        requireTLS:true,
         rejectUnauthorized: false,
-        tls:{
-            rejectUnauthorized:false,
-        }
       });
   
       transporter.sendMail({
